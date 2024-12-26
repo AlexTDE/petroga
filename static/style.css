@@ -1,0 +1,80 @@
+body{
+    width: 99vw;
+    background-image: url("src/back.jpg");
+    background-size: cover; /* Масштабирование картинки, чтобы заполнить экран */
+    background-position: center; /* Центрируем изображение */
+    background-repeat: no-repeat; /* Отключаем повторение картинки */
+    background-attachment: fixed; /* Фиксируем фон при прокрутке */
+    margin: 0;
+    text-align: center;
+}
+.choices{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 80%;
+    gap: 10px;
+    margin: 0 auto;
+}
+.choice{
+    background-color: #dbc8e6;
+}
+img{
+    width: 80%;
+}
+form h1{
+    padding: 20px;
+}
+form{
+    background-color: #a6c2f2;
+    width: 80%;
+    margin: 50px auto;
+}
+/* Стилизация группы радиокнопок */
+.radio-group {
+    display: grid;
+    padding-left: 50px;
+    grid-template-areas:
+            "a b"
+            "c d"
+            "f f";
+
+}
+.first{
+    grid-area: a;
+}
+.second{
+    grid-area: b;
+}
+.third{
+    grid-area: c;
+}
+.fourth{
+    grid-area: d;
+}
+.fifth{
+
+    grid-area: f;
+}
+/* Стили для меток радиокнопок */
+.radio-label {
+    margin-bottom: 10px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+textarea{
+    width: 80%;
+}
+button{
+    background-color: #7184a5;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: 80%;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px auto;
+}

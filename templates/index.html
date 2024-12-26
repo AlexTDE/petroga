@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>гуляем</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+
+    <h1>варианты у петроги be like</h1>
+    <div class="choices">
+        <div class="choice">
+            <h3>ФАВЛИ</h3>
+            <img src="../static/src/waffles.png">
+            <p>Кофейня The Choco, там вафли и много цветов <br>
+            https://yandex.ru/maps/org/the_choco/134710245816?si=fw1me0qfuzqrmdh0eemj6q2g68
+            </p>
+        </div>
+        <div class="choice">
+            <h3>ХОДИТЬ НОГАМИ</h3>
+            <img src="../static/src/beach.jpg">
+            <p>
+                набережная реки карповки<br>
+                либо любое другое направление от м Петроградская<br>
+                PS. покушать с собой возьмем
+            </p>
+        </div>
+        <div class="choice">
+            <h3>МУХАРЕВЪ</h3>
+            <img src="../static/src/beach.jpg">
+            <p>Русская кухня и название смешное<br>
+            https://yandex.ru/profile/55647572338
+            </p>
+        </div>
+        <div class="choice">
+            <h3>ГРУЗИНСКАЯ КЛАССИКА</h3>
+            <img src="../static/src/vine.jpeg">
+            <p>Хачапури и вино<br>
+            https://yandex.ru/maps/-/CHQzjUia
+            </p>
+        </div>
+    </div>
+    <form method="POST" action="/">
+        <h1>ВЫБОР))</h1>
+        <div class="radio-group">
+                <label class="radio-label first">
+                    <input type="radio" name="answer" value="Option 1" required>
+                    ФАВЛИ
+                </label>
+                <label class="radio-label second">
+                    <input type="radio" name="answer" value="Option 2">
+                    ХОДИТЬ НОГАМИ
+                </label>
+                <label class="radio-label third">
+                    <input type="radio" name="answer" value="Option 3">
+                    МУХАРЕВЪ
+                </label>
+                <label class="radio-label fourth">
+                    <input type="radio" name="answer" value="Option 4">
+                    ГРУЗИНСКАЯ КЛАССИКА
+                </label>
+                <label class="radio-label fifth">
+                    <input type="radio" name="answer" value="Option 5">
+                    Другое (нужно написать в сообщении)
+                </label>
+            </div>
+
+        <label for="message">Сообщение:<br></label>
+        <textarea id="message" name="message" required></textarea><br><br>
+
+        <button type="submit">Отправить</button>
+    </form>
+<!-- JavaScript для обработки формы -->
+    <script>
+        document.getElementById("answerForm").addEventListener("submit", async function (event) {
+            event.preventDefault(); // Предотвращаем отправку формы
+            const formData = new FormData(this);
+
+            // Отправляем данные на сервер с помощью Fetch API
+            const response = await fetch("/", {
+                method: "POST",
+                body: formData
+            });
+
+            if (response.ok) {
+                // Показываем popup окно
+                alert("Ваш ответ сохранен! Спасибо!");
+
+                // Очищаем выбор пользователя
+                this.reset();
+            } else {
+                alert("Произошла ошибка. Попробуйте еще раз.");
+            }
+        });
+    </script>
+</body>
+
+</html>
