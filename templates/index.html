@@ -42,7 +42,7 @@
             </p>
         </div>
     </div>
-    <form method="POST" action="/">
+    <form id="answerForm" method="POST" action="/">
         <h1>ВЫБОР))</h1>
         <div class="radio-group">
                 <label class="radio-label first">
@@ -86,12 +86,12 @@
 
             if (response.ok) {
                 // Показываем popup окно
-                alert("Ваш ответ сохранен! Спасибо!");
+                alert("Ура! ответ сохранен! Спасибо!");
 
                 // Очищаем выбор пользователя
                 this.reset();
             } else {
-                alert("Произошла ошибка. Попробуйте еще раз.");
+                alert("Произошла ошибка. Попробуй еще раз.");
             }
         });
     </script>
